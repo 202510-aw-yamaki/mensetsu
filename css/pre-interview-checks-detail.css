@@ -1,0 +1,24 @@
+.detail-hero {
+  align-items: start;
+}
+
+.detail-visual {
+  display: grid;
+  gap: 14px;
+  align-content: start;
+}
+
+.detail-visual .image-frame {
+  min-height: 220px;
+}
+
+.detail-wide {
+  display: grid;
+  gap: 18px;
+}
+
+@media (max-width: 767px) {
+  .detail-visual {
+    display: none;
+  }
+}
