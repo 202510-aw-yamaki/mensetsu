@@ -59,7 +59,7 @@ a {
 
 .slide-header,
 .slide-footer {
-  padding: 20px 28px;
+  padding: 10px 28px;
   background: rgba(238, 243, 239, 0.92);
 }
 
@@ -72,7 +72,7 @@ a {
 }
 
 .slide-body {
-  padding: 28px;
+  padding: 12px;
   background: var(--surface-strong);
 }
 
@@ -161,7 +161,7 @@ a {
 .note,
 .image-panel,
 .checklist-card {
-  padding: 18px;
+  padding: 12px;
 }
 
 .note {
@@ -259,6 +259,12 @@ a {
   gap: 16px;
 }
 
+.pager-main {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
 .pager-links {
   display: flex;
   flex-wrap: wrap;
@@ -282,10 +288,42 @@ a {
   color: var(--accent-strong);
 }
 
+.pager-link.is-disabled {
+  pointer-events: none;
+  background: #c8d6cf;
+  color: rgba(47, 74, 66, 0.7);
+}
+
 .page-number {
   font-weight: 800;
   color: var(--accent-strong);
   letter-spacing: 0.04em;
+  white-space: nowrap;
+}
+
+.pager-side {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin-left: auto;
+}
+
+.pager-progress {
+  width: min(280px, 28vw);
+  height: 8px;
+  border-radius: 999px;
+  background: #c9d8d0;
+  overflow: hidden;
+}
+
+.pager-progress-bar {
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, #89a399, #486b61);
+}
+
+.pager-hint {
+  color: var(--muted);
   white-space: nowrap;
 }
 
@@ -330,12 +368,35 @@ a {
     align-items: flex-start;
   }
 
+  .pager-main,
+  .pager-side {
+    width: 100%;
+  }
+
+  .pager-main {
+    justify-content: space-between;
+  }
+
   .pager-links {
     width: 100%;
   }
 
   .pager-link {
     flex: 1 1 auto;
+  }
+
+  .pager-side {
+    margin-left: 0;
+    gap: 12px;
+  }
+
+  .pager-progress {
+    flex: 1 1 auto;
+    width: auto;
+  }
+
+  .pager-hint {
+    font-size: 0.92rem;
   }
 
   .link-list a {
