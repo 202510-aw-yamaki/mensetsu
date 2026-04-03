@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web面接に向けた事前準備と対策</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .presentation-container {
+            width: 100%;
+            max-width: 1000px;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+        }
+
+        .slide {
+            display: none;
+            width: 100%;
+            min-height: 600px;
+            padding: 60px 50px;
+            background: white;
+            animation: slideIn 0.5s ease-in-out;
+        }
+
+        .slide.active {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateX(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        /* スライドタイプ別スタイル */
+        .slide.title-slide {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-align: center;
+        }
+
+        .slide.section-slide {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            text-align: center;
+        }
+
+        .slide.content-slide {
+            background: #f8f9fa;
+        }
+
+        /* タイトルスライド */
+        .slide.title-slide h1 {
+            font-size: 3em;
+            margin-bottom: 30px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .slide.title-slide p {
+            font-size: 1.2em;
+            opacity: 0.95;
+        }
+
+        /* セクションタイトル */
+        .slide.section-slide h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+
+        /* コンテンツスライド */
+        .slide.content-slide h2 {
+            color: #667eea;
+            font-size: 2em;
+            margin-bottom: 30px;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 15px;
+        }
+
+        .slide.content-slide h3 {
+            color: #764ba2;
+            font-size: 1.3em;
+            margin-top: 25px;
+            margin-bottom: 15px;
+        }
+
+        .slide.content-slide ul {
+            margin-left: 30px;
+            margin-bottom: 20px;
+        }
+
+        .slide.content-slide li {
+            margin-bottom: 12px;
+            line-height: 1.8;
+            font-size: 1.05em;
+        }
+
+        .slide.content-slide p {
+            line-height: 1.8;
+            margin-bottom: 15px;
+            color: #333;
+        }
+
+        /* 強調ボックス */
+        .highlight-box {
+            background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+            border-left: 5px solid #f5576c;
+            padding: 20px 25px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+
+        .highlight-box strong {
+            color: #f5576c;
+        }
+
+        /* チェックリスト */
+        .checklist {
+            background: white;
+            border: 2px solid #667eea;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 15px 0;
+        }
+
+        .checklist li {
+            margin-bottom: 10px;
+        }
+
+        .checklist li:before {
+            content: "✓ ";
+            color: #667eea;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        /* 画像 */
+        .slide-image {
+            margin: 20px auto;
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .image-container {
+            text-align: center;
+            margin: 30px 0;
+        }
+
+        /* ナビゲーション */
+        .controls {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 50px;
+            background: #f5f5f5;
+        }
+
+        button {
+            background: #667eea;
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            font-size: 1em;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        button:hover {
+            background: #764ba2;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        button:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .slide-counter {
+            font-weight: bold;
+            color: #667eea;
+            font-size: 1.1em;
+        }
+
+        /* キーボード操作のヒント */
+        .keyboard-hint {
+            font-size: 0.85em;
+            color: #999;
+            text-align: center;
+            padding: 10px;
+            border-top: 1px solid #ddd;
+        }
+
+        /* レスポンシブ */
+        @media (max-width: 768px) {
+            .slide {
+                padding: 40px 30px;
+                min-height: 500px;
+            }
+
+            .slide.title-slide h1 {
+                font-size: 2em;
+            }
+
+            .slide.section-slide h1 {
+                font-size: 1.8em;
+            }
+
+            .controls {
+                flex-direction: column;
+                gap: 15px;
+                padding: 15px 30px;
+            }
+
+            button {
+                width: 100%;
+            }
+        }
+
+        /* 2カラムレイアウト */
+        .two-column {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin: 20px 0;
+        }
+
+        @media (max-width: 768px) {
+            .two-column {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .column-title {
+            font-weight: bold;
+            color: #764ba2;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+    </style>
+</head>
+<body>
+    <div class="presentation-container">
+        <div class="slides-wrapper">
+            <!-- スライド1: タイトルスライド -->
+            <div class="slide title-slide active">
+                <h1>Web面接に向けた事前準備と対策</h1>
+                <p>近年、Web面接を基本とする企業が多くなっています。</p>
+                <p style="margin-top: 20px; font-size: 1em;">本資料では、Web面接の前に確認しておきたい事項と、</p>
+                <p>面接準備の進め方を整理します。</p>
+            </div>
+
+            <!-- スライド2: セクション1タイトル -->
+            <div class="slide section-slide">
+                <h1>1. Web面接前に確認しておきたいこと</h1>
+                <p style="font-size: 1.2em; margin-top: 30px;">機材・通信環境・画面設定の準備</p>
+            </div>
+
+            <!-- スライド3: 1-1 使用機材の確認 -->
+            <div class="slide content-slide">
+                <h2>1-1. 使用機材の確認</h2>
+                <h3>確認しておきたい項目</h3>
+                <ul class="checklist">
+                    <li>支給されるノートパソコンのカメラ位置</li>
+                    <li>カメラの物理シャッターの有無</li>
+                    <li>マイクの位置と感度</li>
+                    <li>スピーカーまたはイヤホンの音量</li>
+                    <li>充電状態、電源ケーブルの接続</li>
+                    <li>外付けモニターを使用する場合の表示設定</li>
+                </ul>
+                
+                <div class="image-container">
+                    <img src="ノートパソコン画面.png" alt="ノートパソコン画面" class="slide-image" style="max-width: 400px;">
+                </div>
+
+                <div class="highlight-box">
+                    <strong>💡 注意点：</strong>
+                    <p>Fnキー（ファンクションキー）のロック状態によって操作方法が異なるため、事前に確認しておきましょう。</p>
+                </div>
+            </div>
+
+            <!-- スライド4: 1-2 通信環境の確認 -->
+            <div class="slide content-slide">
+                <h2>1-2. 通信環境の確認</h2>
+                <p>Web面接では、通信の安定性が非常に重要です。映像や音声が途切れると、それだけで印象に影響します。</p>
+
+                <h3>確認しておきたい項目</h3>
+                <ul class="checklist">
+                    <li>Wi-Fiが安定しているか</li>
+                    <li>通信障害時の代替手段があるか</li>
+                </ul>
+
+                <div class="image-container">
+                    <img src="ネットワークエラーノート.png" alt="通信環境" class="slide-image" style="max-width: 450px;">
+                </div>
+
+                <div class="highlight-box">
+                    <strong>⚠️ 重要：</strong>面談室以外を使用する場合は、Wi-Fiの安定性を特に留意してください。
+                </div>
+            </div>
+
+            <!-- スライド5: 1-3 プラットフォームに慣れておく -->
+            <div class="slide content-slide">
+                <h2>1-3. 面接で使用されやすいプラットフォームに慣れておく</h2>
+                <p>各プラットフォームで、マイク設定・カメラ設定・画面共有位置・参加方法・レイアウトが異なります。</p>
+
+                <h3>主なツール</h3>
+                <ul class="checklist">
+                    <li>Google Meet</li>
+                    <li>Zoom</li>
+                    <li>Microsoft Teams</li>
+                </ul>
+
+                <div class="highlight-box">
+                    <strong>📌 事前確認項目：</strong>
+                    <ul style="margin-left: 15px; margin-top: 10px; list-style-position: inside;">
+                        <li>表示名が本名になっているか確認する</li>
+                        <li>入室方法（URL参加、アプリ起動、ブラウザ参加）を確認する</li>
+                        <li>背景変更機能は無理に変更しない（自然な背景が最善）</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- スライド6: 1-4 マイクとカメラの調整 -->
+            <div class="slide content-slide">
+                <h2>1-4. マイクとカメラの調整</h2>
+                <p>音声と映像は、面接時の第一印象を大きく左右します。</p>
+
+                <div class="two-column">
+                    <div>
+                        <div class="column-title">🎤 マイク</div>
+                        <ul class="checklist">
+                            <li>事前に音量設定を行う</li>
+                            <li>自分の声が聞き取りやすいかテストする</li>
+                            <li>普段はミュート運用で雑音混入を防ぐ</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <div class="column-title">📹 カメラ</div>
+                        <ul class="checklist">
+                            <li>顔が画角から切れていないか確認</li>
+                            <li>顔の大きさが適切か確認</li>
+                            <li>表情が見える明るさか確認</li>
+                            <li>服装が画面上でどう見えるか確認</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="image-container">
+                    <img src="会議室の入り口に立つ二人.png" alt="マイク・カメラ調整" class="slide-image" style="max-width: 450px;">
+                </div>
+            </div>
+
+            <!-- スライド7: 1-5 デスクトップのレイアウト -->
+            <div class="slide content-slide">
+                <h2>1-5. デスクトップのレイアウト</h2>
+                <p>面接中は、面接画面だけでなく、求人情報や想定問答集などの補助資料を見たい場面があります。</p>
+
+                <h3>推奨構成</h3>
+                <ul class="checklist">
+                    <li><strong>デュアルモニター推奨</strong> →本校面談室ではモニターを用意しています</li>
+                    <li>片方をWeb面接用、もう片方を資料確認用にする</li>
+                </ul>
+
+                <div class="image-container">
+                    <img src="モニターとノートパソコン.png" alt="デスクトップレイアウト" class="slide-image" style="max-width: 450px;">
+                </div>
+
+                <div class="highlight-box">
+                    <strong>⚡ 注意：</strong>資料を見ながら話す場合でも、視線が大きく逸れ続けると不自然に見えます。事前に配置を試して調整しましょう。
+                </div>
+            </div>
+
+            <!-- スライド8: 1-6+1-7 環境整備 -->
+            <div class="slide content-slide">
+                <h2>1-6. 照明・背景・周囲の環境</h2>
+                <h2 style="margin-top: 30px; border-top: 2px solid #667eea; padding-top: 30px;">1-7. 通知の停止</h2>
+
+                <div class="two-column" style="margin-top: 30px;">
+                    <div>
+                        <div class="column-title">🌟 照明・背景</div>
+                        <ul class="checklist">
+                            <li>逆光を避ける</li>
+                            <li>顔が暗くならない位置に座る</li>
+                            <li>背景に不要な物が映り込まないようにする</li>
+                            <li>生活音や話し声が入りにくい場所を選ぶ</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <div class="column-title">🔕 通知停止</div>
+                        <ul class="checklist">
+                            <li>メール通知</li>
+                            <li>チャットツールの通知</li>
+                            <li>カレンダー通知</li>
+                            <li>OS の通知</li>
+                            <li>スマートフォンの着信音や通知音</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="highlight-box" style="margin-top: 30px;">
+                    <strong>⚠️ 重要：</strong>画面共有時には情報漏えいのリスクもあります。事前に通知を停止し、音量ミキサーの操作方法も把握しておきましょう。
+                </div>
+            </div>
+
+            <!-- スライド9: セクション2タイトル -->
+            <div class="slide section-slide">
+                <h1>2. 面接当日に意識したいこと</h1>
+                <p style="font-size: 1.2em; margin-top: 30px;">事前確認とトラブル対応</p>
+            </div>
+
+            <!-- スライド10: 2-1+2-2 面接当日 -->
+            <div class="slide content-slide">
+                <h2>2-1. 早めに接続確認を行う</h2>
+                <p>開始時刻の直前ではなく、<strong>5〜10分前</strong>には接続確認を済ませておくと安心です。</p>
+
+                <h3>確認項目</h3>
+                <ul class="checklist">
+                    <li>URLから正常に入室できるか</li>
+                    <li>マイクが認識されているか</li>
+                    <li>カメラがオンにできるか</li>
+                    <li>名前表示が適切か</li>
+                    <li>音声の聞こえ方に問題がないか</li>
+                    <li>ポケットティッシュを事前に用意しておくと不測の事態に備えられます</li>
+                </ul>
+
+                <h2 style="margin-top: 40px; border-top: 2px solid #667eea; padding-top: 30px;">2-2. トラブル時の対応を想定しておく</h2>
+                <p>どれだけ準備していても、通信や機材トラブルが起こることはあります。</p>
+
+                <h3>対応例</h3>
+                <div style="background: #f0f0f0; padding: 15px; border-radius: 5px; margin: 15px 0;">
+                    <p><strong>音声が聞こえない場合：</strong><br>「恐れ入ります。音声がうまく聞き取れないため、再接続を試させてください。」</p>
+                    <p style="margin-top: 10px;"><strong>接続が切れた場合：</strong><br>速やかに再入室し、チャットまたはメールで一報を入れる</p>
+                    <p style="margin-top: 10px;"><strong>映像不具合がある場合：</strong><br>カメラのオンオフやアプリ再起動を試す</p>
+                </div>
+            </div>
+
+            <!-- スライド11: セクション3タイトル -->
+            <div class="slide section-slide">
+                <h1>3. 面接資料の準備方法</h1>
+                <p style="font-size: 1.2em; margin-top: 30px;">応募企業に関する情報を体系的に整理する</p>
+            </div>
+
+            <!-- スライド12: 3-1 企業情報 -->
+            <div class="slide content-slide">
+                <h2>3-1. 応募先企業の情報および求人情報</h2>
+                <p>まず、応募先企業について調べるための情報を整理します。</p>
+
+                <h3>確認しておきたいもの</h3>
+                <ul class="checklist">
+                    <li>求人情報のURL</li>
+                    <li>企業公式サイトのURL</li>
+                    <li>企業公式サイト内の採用ページ</li>
+                    <li>求人媒体と公式採用ページの内容の差異</li>
+                </ul>
+
+                <h3>進め方</h3>
+                <p>ChatGPTのプロジェクト内の情報源に、テキストで整理しておくと管理しやすくなります。</p>
+
+                <div class="highlight-box">
+                    <strong>💡 注意点：</strong>
+                    <p>求人サイトのURLは会員専用ページの場合があります。誰でも確認できるURLを記載しておくと扱いやすくなります。</p>
+                </div>
+            </div>
+
+            <!-- スライド13: 3-2 + 3-3 履歴書とポートフォリオ -->
+            <div class="slide content-slide">
+                <h2>3-2. 履歴書・職務経歴書</h2>
+
+                <h3>基本方針</h3>
+                <ul class="checklist">
+                    <li>送付済みであれば、その最新版を情報源にする</li>
+                    <li>未送付であれば、応募企業向けに整えたうえで送付版を情報源にする</li>
+                </ul>
+
+                <p style="margin-top: 20px; padding: 10px; background: #fff3cd; border-left: 4px solid #ffc107;">
+                    <strong>重要：</strong> 面接では提出済み書類に基づいて質問されることが多いため、実際に提出した内容と一致していることが重要です。
+                </p>
+
+                <h2 style="margin-top: 35px; border-top: 2px solid #667eea; padding-top: 25px;">3-3. ポートフォリオ</h2>
+
+                <h3>取り扱いのポイント</h3>
+                <ul class="checklist">
+                    <li>ファイル数が多い場合はZIP化してまとめる</li>
+                    <li>重すぎるデータは避ける</li>
+                    <li>README や主要作品の説明資料があれば十分</li>
+                </ul>
+
+                <div class="highlight-box">
+                    <strong>⚠️ AI活用に関する注意：</strong>
+                    <p>AIを使った成果物が含まれる場合、どこまでAIを活用したか、自分が主に担当した工程はどこかをテキストで添えておくと、面接対策の精度が上がります。</p>
+                </div>
+            </div>
+
+            <!-- スライド14: 3-4 訓練校カリキュラム（前半） -->
+            <div class="slide content-slide">
+                <h2>3-4. 職業訓練校のカリキュラムと学習記録</h2>
+                <p>訓練校のカリキュラム表をプロジェクトの情報源として共有しておくと有効です。</p>
+
+                <h3>共有しておきたい情報</h3>
+                <ul class="checklist">
+                    <li>訓練校名</li>
+                    <li>コース名</li>
+                    <li>受講期間</li>
+                    <li>カリキュラム表</li>
+                    <li>学習中の分野や授業の流れ</li>
+                </ul>
+
+                <h3>共有する意義</h3>
+                <p>面接で「職業訓練校で何を学んでいますか」と聞かれることは少なくありません。カリキュラム名を並べるだけでなく、<strong>そこから何を学んだか、どんな気づきがあったか</strong>まで話せるようにしておくと印象が大きく変わります。</p>
+            </div>
+
+            <!-- スライド15: 学習記録を残す考え方 -->
+            <div class="slide content-slide">
+                <h2>学習記録を残す考え方</h2>
+                <p style="font-size: 0.95em;">学習内容を記録することで、理解の定着と面接での説明がしやすくなります。</p>
+
+                <h3 style="font-size: 1.2em;">おすすめの記録方法</h3>
+
+                <div style="background: #e7f3ff; border-left: 5px solid #2196F3; padding: 15px; margin: 15px 0; border-radius: 5px;">
+                    <p><strong>① その日に受けた授業の簡易メモ</strong></p>
+                    <p style="margin: 8px 0; font-size: 0.95em;">授業名だけでなく、何を学んだか、何を感じたかを一言入れる</p>
+                    <p style="margin: 8px 0; color: #666; font-size: 0.9em;"><em>例：「ChatGPT活用演習①：質問の仕方によって回答の質が変わることを実感した」</em></p>
+                </div>
+
+                <div style="background: #f3e5f5; border-left: 5px solid #9c27b0; padding: 15px; margin: 15px 0; border-radius: 5px;">
+                    <p><strong>② 週末時点でのその週のまとめ</strong></p>
+                    <p style="margin: 8px 0; font-size: 0.95em;">今週何が身についたか、どこに課題を感じたかを整理する</p>
+                    <p style="margin: 8px 0; color: #666; font-size: 0.9em;"><em>例：「今週は基礎を学び、理解を深めることの大切さを意識できたが、手を動かす量を増やす必要がある」</em></p>
+                </div>
+
+                <h3>この運用の利点</h3>
+                <ul style="font-size: 0.95em;">
+                    <li>どの分野を学習中か把握できる</li>
+                    <li>理解度の進捗が可視化される</li>
+                    <li>面接で話せる具体的な学習内容が整理される</li>
+                </ul>
+            </div>
+
+            <!-- スライド16: セクション4タイトル -->
+            <div class="slide section-slide">
+                <h1>4. ChatGPTを活用した面接準備</h1>
+                <p style="font-size: 1.2em; margin-top: 30px;">情報整理から想定問答作成まで</p>
+            </div>
+
+            <!-- スライド17: 4-1 + 4-2 求人理解と学習整理 -->
+            <div class="slide content-slide">
+                <h2>4-1. 求人内容の理解を深める</h2>
+                <h3>ChatGPTへの依頼例</h3>
+                <div style="background: #f5f5f5; padding: 12px; border-radius: 5px; margin: 10px 0; font-size: 0.95em;">
+                    <p>「情報源に応募先企業の求人情報リンクを載せてあります。この求人の特徴を整理してください。」</p>
+                </div>
+
+                <h2 style="margin-top: 30px; border-top: 2px solid #667eea; padding-top: 25px;">4-2. 訓練校での学びを面接で話せる形に整理する</h2>
+                <h3>ChatGPTへの依頼例</h3>
+                <div style="background: #f5f5f5; padding: 12px; border-radius: 5px; margin: 10px 0; font-size: 0.95em;">
+                    <p>「カリキュラムと学習メモを共有しています。面接で『何を学んでいますか』と聞かれたときに、授業名の羅列ではなく、理解や気づきも含めて答えられるよう整理してください。」</p>
+                </div>
+
+                <p style="margin-top: 15px; padding: 10px; background: #fff3cd; border-left: 4px solid #ffc107;">
+                    <strong>💡 ポイント：</strong> 単なる受講履歴ではなく、学びを自分の言葉で説明する準備がしやすくなります。
+                </p>
+            </div>
+
+            <!-- スライド18: 4-3 + 4-4 + 4-5 想定問答とテンプレート -->
+            <div class="slide content-slide">
+                <h2>4-3. 想定問答集を作成する</h2>
+                <h3>ChatGPTへの依頼例</h3>
+                <div style="background: #f5f5f5; padding: 12px; border-radius: 5px; margin: 10px 0; font-size: 0.95em;">
+                    <p>「Web面接時の一般的な想定問答集と、応募先企業向けの想定問答集を作成してください。」</p>
+                </div>
+
+                <h2 style="margin-top: 30px; border-top: 2px solid #667eea; padding-top: 25px;">4-4. テンプレートを活用する</h2>
+                <p>見やすいテンプレートがある場合は、あらかじめ情報源に入れておく方法が有効です。好みのレイアウトに近い形で出力しやすくなります。</p>
+
+                <h2 style="margin-top: 30px; border-top: 2px solid #667eea; padding-top: 25px;">4-5. 必ず内容の確認をする</h2>
+                <div class="highlight-box">
+                    <strong>⚠️ 重要：</strong>
+                    <p>作成された資料は必ず自分の目で確認し、整理してください。ChatGPTは便利な一方、必要以上にあなたを過大評価してしまう可能性があります。</p>
+                </div>
+            </div>
+
+            <!-- スライド19: セクション5タイトル -->
+            <div class="slide section-slide">
+                <h1>5. 最終チェックリスト</h1>
+                <p style="font-size: 1.2em; margin-top: 30px;">面接前に一通り確認しておくもの</p>
+            </div>
+
+            <!-- スライド20: チェックリスト（必須） -->
+            <div class="slide content-slide">
+                <h2>必須のチェック項目</h2>
+                <ul class="checklist" style="font-size: 0.95em;">
+                    <li>カメラが使える状態になっている</li>
+                    <li>マイクと音量の確認ができている</li>
+                    <li>通信環境に問題がない</li>
+                    <li>使用するWeb会議ツールを事前に開いて確認している</li>
+                    <li>表示名が適切である</li>
+                    <li>通知をオフにしている</li>
+                    <li>面接URLをすぐ開ける状態にしている</li>
+                </ul>
+
+                <h2 style="margin-top: 35px; border-top: 2px solid #667eea; padding-top: 25px;">推奨のチェック項目</h2>
+                <ul class="checklist" style="font-size: 0.95em;">
+                    <li>デュアルモニターまたは画面配置を調整している</li>
+                    <li>想定問答集を手元で見られるようにしている</li>
+                    <li>企業情報、求人情報、提出書類を見返している</li>
+                    <li>緊急時の再接続手段を準備している</li>
+                    <li>照明と背景を確認している</li>
+                    <li>訓練校のカリキュラムと学習メモを整理している</li>
+                </ul>
+            </div>
+
+            <!-- スライド21: まとめ -->
+            <div class="slide content-slide">
+                <h2>まとめ</h2>
+                <p style="font-size: 1.05em; line-height: 1.9; margin: 20px 0;">Web面接では、受け答えの内容だけでなく、<strong>通信環境、映り方、音声、画面構成、事前準備の精度</strong>が面接全体の進行に大きく影響します。</p>
+
+                <h3>準備の流れ（重要）</h3>
+                <ul style="font-size: 0.95em;">
+                    <li>機材を扱える状態にしておく</li>
+                    <li>面接環境を整えておく</li>
+                    <li>応募先情報と提出書類を整理しておく</li>
+                    <li>訓練校での学習内容を振り返れるようにしておく</li>
+                    <li>ChatGPTを活用して想定問答や資料を準備しておく</li>
+                </ul>
+
+                <div class="highlight-box" style="margin-top: 25px;">
+                    <strong>🎯 最終メッセージ：</strong>
+                    <p>カリキュラム表だけでなく、日々の学びや理解を短く記録しておくことで、面接で「何を学んでいるのか」をより具体的に、自分の言葉で話しやすくなります。これは知識の有無だけでなく、<strong>「会社の中に入っても継続して学べる姿勢ができている」</strong>と面接官に伝えるうえでも有効です。</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- ナビゲーション -->
+        <div class="controls">
+            <button id="prevBtn" onclick="changeSlide(-1)">← 前へ</button>
+            <span class="slide-counter"><span id="currentSlide">1</span> / <span id="totalSlides">21</span></span>
+            <button id="nextBtn" onclick="changeSlide(1)">次へ →</button>
+        </div>
+        <div class="keyboard-hint">💡 キーボード操作: ← → キーでスライド移動</div>
+    </div>
+
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+        const totalSlides = slides.length;
+
+        document.getElementById('totalSlides').textContent = totalSlides;
+
+        function showSlide(n) {
+            slides[currentSlide].classList.remove('active');
+            currentSlide = (n + totalSlides) % totalSlides;
+            slides[currentSlide].classList.add('active');
+            
+            document.getElementById('currentSlide').textContent = currentSlide + 1;
+            document.getElementById('prevBtn').disabled = currentSlide === 0;
+            document.getElementById('nextBtn').disabled = currentSlide === totalSlides - 1;
+        }
+
+        function changeSlide(direction) {
+            showSlide(currentSlide + direction);
+        }
+
+        // キーボード操作
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'ArrowLeft') changeSlide(-1);
+            if (e.key === 'ArrowRight') changeSlide(1);
+        });
+
+        // 初期化
+        showSlide(0);
+    </script>
+</body>
+</html>
