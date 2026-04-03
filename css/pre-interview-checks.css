@@ -82,6 +82,10 @@
     object-fit: cover;
     object-position: center top;
   }
+
+  .chapter-toc .link-text {
+    display: none;
+  }
 }
 
 @media (max-width: 767px) {
