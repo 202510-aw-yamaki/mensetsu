@@ -22,6 +22,22 @@ html {
   min-width: 360px;
 }
 
+html.js-page-transition .slide-page {
+  opacity: 0;
+  transform: translateY(8px);
+  filter: saturate(0.97) brightness(0.985);
+}
+
+html.js-page-transition.page-ready .slide-page {
+  opacity: 1;
+  transform: translateY(0);
+  filter: saturate(1) brightness(1);
+  transition:
+    opacity 320ms ease,
+    transform 320ms ease,
+    filter 420ms ease;
+}
+
 body {
   margin: 0;
   min-width: 360px;
@@ -337,6 +353,16 @@ a {
 .pager-hint {
   color: var(--muted);
   white-space: nowrap;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html.js-page-transition .slide-page,
+  html.js-page-transition.page-ready .slide-page {
+    opacity: 1;
+    transform: none;
+    filter: none;
+    transition: none;
+  }
 }
 
 @media (max-width: 1023px) {
