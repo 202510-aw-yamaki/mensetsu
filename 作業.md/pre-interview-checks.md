@@ -65,3 +65,29 @@
 ## 追記: 今回のインシデントの有無
 
 - なし
+
+## 追記: 今回の要望
+
+- `pre-interview-checks/usage-device.html` の右側画像の下に `キーボードFnキー.png` を追加する
+- `1-1. 使用機材の確認` の見出しをチャプタータイトル基準にする
+- `class="note"` の下に、PC幅のときだけ `webインフラ講師.png` を表示する
+- このページではSP幅でもタブレット幅と同様に画像を表示する
+- PC幅では左の `class="stack"` の高さを右の `class="image-panel detail-visual usage-device-visual"` に合わせる
+- 左カラム内の余白比率を調整する
+
+## 追記: 今回の作業内容
+
+- `pre-interview-checks/usage-device.html` の右カラムに `キーボードFnキー.png` を追加した
+- `1-1. 使用機材の確認` の見出しクラスを `page-title` に変更した
+- `class="note"` の下に、PC幅だけ表示する `webインフラ講師.png` を追加した
+→のちユーザー修正。
+- `css/pre-interview-checks-detail.css` に `desktop-only-visual` を追加し、PC幅のみ表示するようにした
+→のちユーザー修正。
+- `pre-interview-checks/usage-device.html` の右カラムに `usage-device-visual` クラスを追加し、このページだけSP幅でも画像を表示するようにした
+- 左カラムに余白比率調整用のスペーサーを追加した
+- `css/pre-interview-checks-detail.css` で、PC幅の左カラム余白を `0.9 : 0.5 : 1.6` の比率で配分するよう調整した
+- これにより、左カラムの内容高さを右カラム画像高さに寄せつつ、見た目のバランスを調整した
+
+## 追記: 今回のインシデントの有無
+
+- なし

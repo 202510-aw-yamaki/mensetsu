@@ -17,10 +17,6 @@
   gap: 18px;
 }
 
-.desktop-only-visual,
-.usage-device-spacer {
-  display: none;
-}
 
 @media (min-width: 1024px) {
   .desktop-only-visual {
