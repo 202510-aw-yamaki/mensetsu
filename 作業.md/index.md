@@ -1,0 +1,69 @@
+# index.html 作業記録
+
+## こちらの要望
+
+- 全体の作りは現在の状態に合わせて作成する
+- セマンティックなHTMLに変える
+- ブレイクポイントを以下で指定する
+- モバイル: 〜767px
+- タブレット: 768px〜1023px
+- PC: 1024px以上
+- 最小widthサイズは360px
+- 基本的に画面下部のスライドバーは出ない設計にする
+- `index.html` を本題材のトップページとして作成する
+- 各大項目に飛べるように構成する
+- 下部のナンバーは `0 / 総ページ数` とする
+- 現在の1/13と2/13をあわせた内容を `index.html` にする
+- タブレット〜PC幅では左上カラム、左下カラム、右側カラム構成にする
+- モバイル幅以下では右側カラムを非表示にする
+- 1〜5とまとめは、それぞれ内容にあったHTMLファイルを作成する
+- CSSは `css` フォルダ配下に共通CSSと個別CSSを作成する
+- スライド方式も保つ
+- フッターを添付画像のような見た目にする
+- セクションHTML/CSSのファイル名を英語名称に変更する
+- `目次` を上下中央寄せにする
+- `0 / 総ページ数` も上下中央寄せにする
+- SP幅でも `link-list` は横並びを維持する
+- ヘッダー右側にも `pager-main` を配置する
+- `← → キーでも操作できます` が実際に機能するようにする
+- ここまでで `index.html` は完成とする
+
+## 作業内容
+
+- `index.html` をトップページとして新規作成
+- `pre-interview-checks.html`
+- `interview-day.html`
+- `materials-preparation.html`
+- `chatgpt-support.html`
+- `final-checklist.html`
+- `summary-conclusion.html`
+- 上記各HTMLをスライド1枚単位の見た目で新規作成
+- `css/common.css` を作成し、全体レイアウト、カード、ヘッダー、フッター、ページャーを共通化
+- 各ページ専用CSSを作成
+- `css/index.css`
+- `css/pre-interview-checks.css`
+- `css/interview-day.css`
+- `css/materials-preparation.css`
+- `css/chatgpt-support.css`
+- `css/final-checklist.css`
+- `css/summary-conclusion.css`
+- ブレイクポイントをモバイル、タブレット、PCで整理
+- `min-width: 360px` を設定
+- モバイル時はトップページ右カラム画像を非表示化
+- フッターを `前へ / ページ番号 / 次へ / 進捗バー / キー操作案内` の構成へ変更
+- ヘッダー右側にも `pager-main` を追加
+- 共通JSとして `js/slide-navigation.js` を作成し、左右キーで前後ページへ移動できるようにした
+- 全HTMLから共通JSを読み込むようにした
+
+## インシデントの有無
+
+- あり
+
+## その解決策
+
+- `apply_patch` で一括追加しようとした際、Windows 側でコマンド長起因のエラーが発生した
+- 追加対象を分割し、複数回に分けて作成した
+- ターミナル上ではHTML/Markdownの日本語が文字化けして見える場面があった
+- ユーザー環境では正常表示との確認を取ったうえで、文言破損を前提にせず作業を継続した
+- `← → キーでも操作できます` 表示のみで実際には動作していなかった
+- `js/slide-navigation.js` を作成し、左右キー入力で前後ページへ遷移するように修正した
