@@ -1,0 +1,4 @@
+.example-grid {
+  display: grid;
+  gap: 14px;
+}

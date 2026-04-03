@@ -1,0 +1,27 @@
+.index-intro {
+  display: grid;
+  gap: 14px;
+}
+
+.toc-heading {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.toc-note {
+  margin: 0;
+  font-size: 0.95rem;
+  color: var(--muted);
+}
+
+.hero-visual img {
+  min-height: 520px;
+}
+
+@media (max-width: 767px) {
+  .hero-visual {
+    display: none;
+  }
+}
