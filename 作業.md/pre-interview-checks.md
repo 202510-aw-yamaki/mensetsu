@@ -68,6 +68,28 @@
 
 ## 追記: 今回の要望
 
+- `pre-interview-checks/network-check.html` を削除する
+- 章内の順番を `1-1`, `1-2`, `1-3`, `1-4` の順に並べ替える
+- `1-4` 配下の各種プラットフォームページを `1-4_a` 以降にそろえる
+- 目次から各詳細ページへの関連リンクを新しい順番に合わせて更新する
+
+## 追記: 今回の作業内容
+
+- `pre-interview-checks/network-check.html` を削除した
+- `pre-interview-checks.html` の目次を `1-1` から `1-4` の順に並べ替えた
+- `pre-interview-checks/usage-device.html` の次リンクを `audio-camera-desktop.html` に変更した
+- `pre-interview-checks/audio-camera-desktop.html` を `1-2` 扱いに変更した
+- `pre-interview-checks/environment-notifications.html` を `1-3` 扱いに変更し、次リンクを `platform-overview.html` に変更した
+- `pre-interview-checks/platform-overview.html` を `1-4` 扱いに変更した
+- `pre-interview-checks/google-meet.html`, `zoom.html`, `microsoft-teams.html` を `1-4_a` 以降の表記に変更した
+- `microsoft-teams.html` の次リンクを `../interview-day.html` に戻した
+
+## 追記: 今回のインシデントの有無
+
+- なし
+
+## 追記: 今回の要望
+
 - `pre-interview-checks/usage-device.html` の右側画像の下に `キーボードFnキー.png` を追加する
 - `1-1. 使用機材の確認` の見出しをチャプタータイトル基準にする
 - `class="note"` の下に、PC幅のときだけ `webインフラ講師.png` を表示する
