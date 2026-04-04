@@ -144,3 +144,7 @@
 - usage-device.html のタブレット幅では、右側画像2枚の間隔を JS で調整し、最大 30px までに制御する
 - 余り高さが 30px を超えた場合は、上の画像の上側へ margin-top として逃がす
 - PC/SP には影響させず、ページ固有の調整として分離する
+## 追加メモ4
+
+- [usage-device.md](usage-device.md) を新規作成し、`usage-device.html` の作業記録を分離した
+  → `usage-device` の詳細調整が `pre-interview-checks.md` に埋もれると進行が追いづらくなるため、専用メモへ切り出した
