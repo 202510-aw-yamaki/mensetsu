@@ -18,24 +18,50 @@
 }
 
 .audio-camera-hero {
-  align-items: start;
+  align-items: stretch;
 }
 
 .audio-camera-hero > .stack {
-  gap: 14px;
+  gap: 0;
 }
 
 .audio-camera-stack {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 20px;
   align-self: stretch;
   height: 100%;
 }
 
+.audio-camera-stack > .card,
+.audio-camera-stack > .note {
+  padding-inline: 12px;
+  padding-block: calc(12px + var(--audio-camera-extra-pad, 0px));
+}
+
 .audio-camera-visual {
-  align-self: start;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 20px;
+  align-self: stretch;
+  height: 100%;
 }
 
 .audio-camera-visual .image-frame {
   min-height: 210px;
+}
+
+.audio-camera-visual > .image-frame:first-child {
+  flex: 1 1 auto;
+  min-height: 0;
+}
+
+.audio-camera-visual > .image-frame:first-child img {
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
 }
 
 .audio-camera-visual picture.image-frame {
@@ -64,11 +90,11 @@
   }
 
   .audio-camera-visual {
-    display: grid;
+    display: flex;
   }
 
-  .audio-camera-visual .image-frame {
-    height: auto;
+  .audio-camera-visual > .image-frame:first-child {
+    flex: 1 1 auto;
   }
 
   .audio-camera-visual img {
@@ -99,29 +125,15 @@
 
   .audio-camera-hero {
     grid-template-columns: minmax(0, 1.08fr) minmax(320px, 0.92fr);
-    align-items: start;
-  }
-
-  .audio-camera-stack {
-    align-content: space-between;
-  }
-
-  .audio-camera-hero > .stack > .card:first-child .text {
-    display: none;
-  }
-
-  .audio-camera-stack {
-    align-content: space-between;
+    align-items: stretch;
   }
 
   .audio-camera-visual {
-    display: grid;
-    align-content: start;
-    height: auto;
+    display: flex;
   }
 
-  .audio-camera-visual .image-frame {
-    height: auto;
+  .audio-camera-visual > .image-frame:first-child {
+    flex: 1 1 auto;
   }
 
   .audio-camera-visual img {
