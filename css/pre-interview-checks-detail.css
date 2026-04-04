@@ -17,6 +17,22 @@
   gap: 18px;
 }
 
+.audio-camera-hero {
+  align-items: stretch;
+}
+
+.audio-camera-hero > .stack {
+  gap: 14px;
+}
+
+.audio-camera-visual {
+  align-self: stretch;
+}
+
+.audio-camera-visual .image-frame {
+  min-height: 210px;
+}
+
 
 @media (min-width: 1024px) {
   .desktop-only-visual {
@@ -25,6 +41,19 @@
 
   .usage-device-hero {
     align-items: stretch;
+  }
+
+  .audio-camera-hero {
+    align-items: stretch;
+  }
+
+  .audio-camera-visual {
+    display: grid;
+    height: 100%;
+  }
+
+  .audio-camera-visual .image-frame {
+    height: 100%;
   }
 }
 
@@ -41,5 +70,9 @@
 @media (min-width: 768px) and (max-width: 1023px) {
   .usage-device-hero .note {
     display: none;
+  }
+
+  .audio-camera-visual {
+    display: grid;
   }
 }
