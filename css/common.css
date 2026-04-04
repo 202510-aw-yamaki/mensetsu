@@ -455,6 +455,9 @@ a {
 
   .pager-hint {
     font-size: 0.78rem;
+    white-space: normal;
+    text-align: right;
+    line-height: 1.25;
   }
 
 }

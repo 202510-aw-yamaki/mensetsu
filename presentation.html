@@ -488,7 +488,7 @@
       </div>
       <div class="right">
         <div class="progress"><div id="progressBar" class="bar"></div></div>
-        <div class="hint">← → キーでも操作できます</div>
+        <div class="hint">左右キーやフリック操作も可能です</div>
       </div>
     </footer>
   </main>
@@ -523,6 +523,66 @@
       if (event.key === "ArrowLeft") changeSlide(-1);
       if (event.key === "ArrowRight") changeSlide(1);
     });
+
+    (() => {
+      let startX = 0;
+      let startY = 0;
+      let activeTouchId = null;
+
+      document.addEventListener(
+        "touchstart",
+        (event) => {
+          if (event.touches.length !== 1) {
+            activeTouchId = null;
+            return;
+          }
+
+          if (event.target.closest("a, button, input, textarea, select, label")) {
+            activeTouchId = null;
+            return;
+          }
+
+          const touch = event.touches[0];
+          activeTouchId = touch.identifier;
+          startX = touch.clientX;
+          startY = touch.clientY;
+        },
+        { passive: true },
+      );
+
+      document.addEventListener(
+        "touchend",
+        (event) => {
+          if (activeTouchId === null) {
+            return;
+          }
+
+          const touch = Array.from(event.changedTouches).find(
+            (item) => item.identifier === activeTouchId,
+          );
+
+          activeTouchId = null;
+
+          if (!touch) {
+            return;
+          }
+
+          const deltaX = touch.clientX - startX;
+          const deltaY = touch.clientY - startY;
+
+          if (Math.abs(deltaX) <= 50 || Math.abs(deltaX) <= Math.abs(deltaY) * 1.2) {
+            return;
+          }
+
+          if (deltaX > 0) {
+            changeSlide(-1);
+          } else {
+            changeSlide(1);
+          }
+        },
+        { passive: true },
+      );
+    })();
 
     showSlide(0);
   </script>

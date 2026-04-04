@@ -44,7 +44,7 @@
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  gap: 20px;
+  gap: 10px;
   align-self: stretch;
   height: 100%;
 }
@@ -53,30 +53,9 @@
   min-height: 210px;
 }
 
-.audio-camera-visual > .image-frame:first-child {
-  flex: 1 1 auto;
-  min-height: 0;
-}
-
-.audio-camera-visual > .image-frame:first-child img {
-  width: 100%;
-  height: 100%;
-  object-fit: fill;
-}
-
 .audio-camera-visual picture.image-frame {
   display: block;
   width: 100%;
-}
-
-.audio-camera-visual picture.image-frame:last-child {
-  min-height: 240px;
-}
-
-.audio-camera-visual picture.image-frame:last-child img {
-  width: 100%;
-  height: 100%;
-  object-fit: fill;
 }
 
 .audio-camera-sp-image {
@@ -94,21 +73,16 @@
 }
 
 
-@media (min-width: 1024px) {
-  .desktop-only-visual {
-    display: block;
-  }
-
-  .usage-device-hero {
-    align-items: stretch;
-  }
-
-  .audio-camera-visual {
-    display: flex;
-  }
-
+@media (min-width: 768px) {
   .audio-camera-visual > .image-frame:first-child {
     flex: 1 1 auto;
+    min-height: 0;
+  }
+
+  .audio-camera-visual > .image-frame:first-child img {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
   }
 
   .audio-camera-visual img {
@@ -117,8 +91,28 @@
     object-fit: contain;
   }
 
+  .audio-camera-visual picture.image-frame:last-child {
+    min-height: 240px;
+  }
+
+  .audio-camera-visual picture.image-frame:last-child img {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+  }
+
   .audio-camera-hero .list li + li {
     margin-top: 2px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .desktop-only-visual {
+    display: block;
+  }
+
+  .usage-device-hero {
+    align-items: stretch;
   }
 }
 
@@ -144,38 +138,5 @@
   .audio-camera-hero {
     grid-template-columns: minmax(0, 1.08fr) minmax(320px, 0.92fr);
     align-items: stretch;
-  }
-
-  .audio-camera-visual {
-    display: flex;
-  }
-
-  .audio-camera-visual > .image-frame:first-child {
-    flex: 1 1 auto;
-  }
-
-  .audio-camera-visual img {
-    width: 100%;
-    height: auto;
-    object-fit: contain;
-  }
-
-  .audio-camera-visual picture.image-frame {
-    display: block;
-    width: 100%;
-  }
-
-  .audio-camera-visual picture.image-frame:last-child {
-    min-height: 240px;
-  }
-
-  .audio-camera-visual picture.image-frame:last-child img {
-    width: 100%;
-    height: 100%;
-    object-fit: fill;
-  }
-
-  .audio-camera-hero .list li + li {
-    margin-top: 2px;
   }
 }
