@@ -79,6 +79,20 @@
   object-fit: fill;
 }
 
+.audio-camera-sp-image {
+  display: none;
+  margin: 12px 0 0;
+}
+
+.audio-camera-sp-image img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 14px;
+  border: 1px solid var(--line);
+  background: #dde6e1;
+}
+
 
 @media (min-width: 1024px) {
   .desktop-only-visual {
@@ -115,6 +129,10 @@
 
   .usage-device-visual {
     display: grid;
+  }
+
+  .audio-camera-sp-image {
+    display: block;
   }
 }
 
