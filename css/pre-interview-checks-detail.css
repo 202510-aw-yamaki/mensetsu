@@ -171,6 +171,11 @@
     flex: 0 0 auto;
   }
 
+  .usage-device-visual picture.image-frame {
+    display: block;
+    width: 100%;
+  }
+
   .audio-camera-hero {
     grid-template-columns: minmax(0, 1.08fr) minmax(320px, 0.92fr);
     grid-template-rows: auto auto auto auto;
