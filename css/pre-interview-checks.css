@@ -15,7 +15,7 @@
 .chapter-visual {
   grid-area: visual;
   min-height: 0;
-  align-self: start;
+  align-self: stretch;
 }
 
 .toc-heading {
@@ -37,7 +37,7 @@
     grid-template-areas:
       "intro visual"
       "toc visual";
-    align-items: start;
+    align-items: stretch;
   }
 
   .chapter-visual {
@@ -64,7 +64,7 @@
     grid-template-areas:
       "intro intro"
       "toc visual";
-    align-items: start;
+    align-items: stretch;
   }
 
   .chapter-visual {
