@@ -137,6 +137,39 @@
 
   .audio-camera-hero {
     grid-template-columns: minmax(0, 1.08fr) minmax(320px, 0.92fr);
+    grid-template-rows: auto auto auto auto;
+    gap: 14px 16px;
     align-items: stretch;
+  }
+
+  .audio-camera-stack {
+    display: contents;
+  }
+
+  .audio-camera-stack > .card:first-child {
+    grid-column: 1 / -1;
+  }
+
+  .audio-camera-stack > .card:nth-child(n + 2),
+  .audio-camera-stack > .note {
+    grid-column: 1;
+  }
+
+  .audio-camera-stack .section-title br {
+    display: none;
+  }
+
+  .audio-camera-stack .section-title .title-indent {
+    display: none;
+  }
+
+  .audio-camera-visual {
+    grid-column: 2;
+    grid-row: 2 / span 3;
+    height: auto;
+  }
+
+  .audio-camera-visual > .image-frame:first-child {
+    min-height: 0;
   }
 }
