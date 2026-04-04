@@ -25,7 +25,7 @@
       </header>
       <main class="slide-body stack">
         <section class="content-grid detail-hero audio-camera-hero" aria-labelledby="detail-title">
-          <div class="stack">
+          <div class="stack audio-camera-stack">
             <article class="card">
               <h1 id="detail-title" class="section-title">1-2. マイクの調整と<br>
                 &emsp;&ensp;&nbsp;&thinsp;デスクトップのレイアウト</h1>
@@ -37,7 +37,6 @@
               <ul class="list">
                 <li>音量ミキサーの開き方は確認しましょう</li>
                 <li>事前に音量設定を行いましょう</li>
-                <li>自分の声が聞き取りやすいかテストをしましょう</li>
                 <li>講義中はミュートにし、面接時のみ解除する運用にすると便利です</li>
               </ul>
             </article>
@@ -45,14 +44,13 @@
               <h2 class="block-title">デスクトップレイアウト</h2><br>
               <ul class="list">
                 <li>面談室にはモニターを用意しています。デュアルモニターを活用しましょう</li>
-                <li>片方をWeb面接用、もう片方を資料確認用にすると資料の確認に役立ちます</li>
+                <li>Web会議ツール用と資料確認用にすると資料の確認に役立ちます</li>
                 <li>ただし、視線移動が不自然にならない配置にすることが大切です</li>
-                <li>視線が逸れ続けないように事前に配置を試してみましょう</li>
               </ul>
             </article>
             <article class="note">
-              <p class="text">ノートパソコン側をWeb会議ツール用にし、外部モニターを資料表示用にする、<br>
-                または逆にして、視線移動が不自然にならない配置を選ぶなど、<br>
+              <p class="text">ノートパソコン側をWeb会議ツール用にし、<br>
+                外部モニターを資料表示用にするなど、<br>
               自身にあったレイアウトを設定しましょう。<br>
             ※注意点としてマウスカーソルが迷子にならないように、<br>
             &emsp;配置した設定も忘れないように気をつけましょう。</p>
@@ -62,9 +60,10 @@
             <div class="image-frame">
               <img src="../image/音量ミキサー.png" alt="音量ミキサー">
             </div>
-            <div class="image-frame">
+            <picture class="image-frame">
+              <source media="(max-width: 1023px)" srcset="../image/マルチディスプレイ説明タブレット用.png">
               <img src="../image/マルチディスプレイ説明.png" alt="マルチディスプレイの説明">
-            </div>
+            </picture>
           </aside>
         </section>
       </main>
@@ -88,6 +87,7 @@
     </div>
   </div>
   <script src="../js/page-transition.js"></script>
+  <script src="../js/audio-camera-layout.js"></script>
   <script src="../js/slide-navigation.js"></script>
 </body>
 </html>
