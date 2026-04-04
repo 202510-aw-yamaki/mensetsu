@@ -1,4 +1,4 @@
-# pre-interview-checks.html 作業記録
+﻿# pre-interview-checks.html 作業記録
 
 ## こちらの要望
 
@@ -113,3 +113,33 @@
 ## 追記: 今回のインシデントの有無
 
 - なし
+## 追加メモ
+
+- `pre-interview-checks/usage-device.html` のタブレット幅レイアウトを、上段に `1-1. 使用機材の確認` のカードを全幅で配置し、その下に左側 `確認しておきたい項目` と `note`、右側に画像を置く構成へ変更した
+- `pre-interview-checks/audio-camera-desktop.html` のタブレット幅レイアウトも同じ考え方で見直し、上段の導入カードを全幅、その下に左のカード群と右の画像を並べる構成へ揃えた
+- `audio-camera-desktop.html` では、タブレット幅で見出し内の `<br>` と字下げ用の `&emsp;&ensp;&nbsp;&thinsp;` を非表示にして、文言の見え方を整理した
+
+## 追加インシデント
+
+- `css/pre-interview-checks-detail.css` のタブレット用メディアクエリを `usage-device` 側に寄せた際、同じブロック内にあった `audio-camera` 専用ルールを一度消してしまい、`audio-camera-desktop.html` のタブレット幅レイアウトが崩れた
+- 原因は、`usage-device` と `audio-camera` のタブレット用配置を同一メディアクエリで扱うときに、両者の専用ルールを分けて保持できていなかったこと
+
+## 追加対応
+
+- 崩れたあとに `audio-camera-hero` / `audio-camera-stack` / `audio-camera-visual` のタブレット用ルールを同じメディアクエリ内へ戻し、`usage-device` の新配置を維持したまま復旧した
+- `usage-device` 側と `audio-camera` 側のタブレット用ルールを同じファイル内で管理しつつ、セレクタを分けて衝突しないようにした
+
+## 追加注意点
+
+- `usage-device` と `audio-camera` のように似た構成でも、まず共通化できる部分はまとめる。ページ固有で必要な差分だけを分けて書く
+- 1つのメディアクエリをまとめて編集する前に、他ページの専用ルールを消していないか確認する。共通化できる箇所は重複させない
+- レイアウト変更後は、関連する別ページのタブレット幅も必ず目視確認する
+## 追加対応2
+
+- `usage-device` と `audio-camera-desktop` のタブレット幅レイアウトを、共通の2カラム骨格へ寄せた
+- `usage-device` と `audio-camera` に共通する `display: contents`、先頭カードの全幅配置、右カラムの配置指定をまとめた
+- 行数や見出しの表示切り替えなど、レイアウトが崩れる差分だけはページ固有ルールとして残した
+## 追加メモ3
+- usage-device.html のタブレット幅では、右側画像2枚の間隔を JS で調整し、最大 30px までに制御する
+- 余り高さが 30px を超えた場合は、上の画像の上側へ margin-top として逃がす
+- PC/SP には影響させず、ページ固有の調整として分離する
