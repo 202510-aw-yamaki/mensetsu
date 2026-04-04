@@ -58,9 +58,9 @@
 
 @media (min-width: 768px) and (max-width: 1023px) {
   .hero-grid {
-    grid-template-columns: minmax(0, 1.08fr) minmax(280px, 0.92fr);
+    grid-template-columns: minmax(0, 1.08fr) minmax(320px, 0.92fr);
     grid-template-areas:
-      "intro intro"
+      "intro visual"
       "toc visual";
     align-items: start;
   }

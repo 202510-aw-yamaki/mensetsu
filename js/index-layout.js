@@ -16,11 +16,6 @@
       return;
     }
 
-    if (width <= 1023) {
-      heroVisual.style.height = `${indexToc.offsetHeight}px`;
-      return;
-    }
-
     const rowGap = parseFloat(window.getComputedStyle(heroGrid).gap || "0");
     const leftHeight = indexIntro.offsetHeight + indexToc.offsetHeight + rowGap;
     heroVisual.style.height = `${leftHeight}px`;
