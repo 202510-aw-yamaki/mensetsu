@@ -5,6 +5,8 @@
 
 .chapter-intro {
   grid-area: intro;
+  display: grid;
+  gap: 14px;
 }
 
 .chapter-toc {

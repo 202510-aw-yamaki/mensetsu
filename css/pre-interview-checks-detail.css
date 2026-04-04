@@ -37,3 +37,9 @@
     display: grid;
   }
 }
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .usage-device-hero .note {
+    display: none;
+  }
+}
