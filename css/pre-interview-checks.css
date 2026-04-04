@@ -40,6 +40,8 @@
       "intro visual"
       "toc visual";
     align-items: stretch;
+    height: 100%;
+    min-height: 0;
   }
 
   .chapter-visual {
@@ -68,6 +70,8 @@
       "intro visual"
       "toc visual";
     align-items: stretch;
+    height: 100%;
+    min-height: 0;
   }
 
   .chapter-visual {

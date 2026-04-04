@@ -103,6 +103,7 @@ a {
 .slide-body {
   padding: 12px;
   background: var(--surface-strong);
+  min-height: 0;
 }
 
 .eyebrow {
@@ -464,6 +465,7 @@ a {
 
 @media (min-width: 1024px) {
   .slide-body {
-    min-height: 750px;
+    height: 750px;
+    overflow: hidden;
   }
 }

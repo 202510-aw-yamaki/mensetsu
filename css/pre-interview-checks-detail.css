@@ -1,5 +1,6 @@
 .detail-hero {
   align-items: start;
+  min-height: 0;
 }
 
 .detail-visual {
@@ -82,7 +83,8 @@
   .audio-camera-visual > .image-frame:first-child img {
     width: 100%;
     height: 100%;
-    object-fit: fill;
+    object-fit: cover;
+    object-position: center top;
   }
 
   .audio-camera-visual img {
@@ -98,7 +100,8 @@
   .audio-camera-visual picture.image-frame:last-child img {
     width: 100%;
     height: 100%;
-    object-fit: fill;
+    object-fit: cover;
+    object-position: center top;
   }
 
   .audio-camera-hero .list li + li {
@@ -111,8 +114,89 @@
     display: block;
   }
 
+  .detail-hero {
+    height: 100%;
+  }
+
   .usage-device-hero {
     align-items: stretch;
+    height: 100%;
+  }
+
+  .usage-device-stack {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 10px;
+    height: 100%;
+    min-height: 0;
+  }
+
+  .usage-device-stack > .card,
+  .usage-device-stack > .note {
+    flex: 0 0 auto;
+  }
+
+  .usage-device-visual {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    height: 100%;
+    min-height: 0;
+  }
+
+  .usage-device-visual > .image-frame {
+    min-height: 0;
+  }
+
+  .usage-device-visual > .image-frame:first-child {
+    flex: 1.15 1 0;
+  }
+
+  .usage-device-visual > .image-frame:last-child {
+    flex: 0.85 1 0;
+  }
+
+  .usage-device-visual img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+  }
+
+  .audio-camera-hero {
+    height: 100%;
+  }
+
+  .audio-camera-stack {
+    gap: 14px;
+    justify-content: space-between;
+  }
+
+  .audio-camera-stack > .card,
+  .audio-camera-stack > .note {
+    flex: 0 0 auto;
+  }
+
+  .audio-camera-visual {
+    gap: 12px;
+  }
+
+  .audio-camera-visual > .image-frame:first-child {
+    flex: 1.1 1 0;
+    min-height: 0;
+  }
+
+  .audio-camera-visual picture.image-frame:last-child {
+    flex: 0.9 1 0;
+    min-height: 0;
+  }
+
+  .audio-camera-visual picture.image-frame:last-child img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
   }
 }
 
@@ -136,6 +220,8 @@
     grid-template-rows: auto auto auto;
     gap: 14px 16px;
     align-items: stretch;
+    height: 100%;
+    min-height: 0;
   }
 
   .usage-device-stack {
@@ -181,6 +267,8 @@
     grid-template-rows: auto auto auto auto;
     gap: 14px 16px;
     align-items: stretch;
+    height: 100%;
+    min-height: 0;
   }
 
   .audio-camera-stack {

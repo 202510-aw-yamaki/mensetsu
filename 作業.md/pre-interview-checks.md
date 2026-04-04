@@ -148,3 +148,9 @@
 
 - [usage-device.md](usage-device.md) を新規作成し、`usage-device.html` の作業記録を分離した
   → `usage-device` の詳細調整が `pre-interview-checks.md` に埋もれると進行が追いづらくなるため、専用メモへ切り出した
+
+## 追加メモ5
+
+- `slide-body` を PC幅で 750px 固定にしたあと、`usage-device.html` と `audio-camera-desktop.html` は内部の高さ配分も直さないと footer 裏に沈み込んだ
+- 原因は、外枠だけでなく各ページの `stack` / `visual` が内容量基準のままだったこと
+- PC幅では各ページの左右カラムを `height: 100%` 前提にそろえ、画像は枠内に収まるよう `contain` で扱う方針にした
