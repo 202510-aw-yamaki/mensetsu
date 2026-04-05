@@ -98,6 +98,14 @@
     object-fit: cover;
     object-position: center top;
   }
+
+  .support-job-understanding-hero .support-detail-stack {
+    display: grid;
+  }
+
+  .support-job-understanding-hero .text {
+    line-height: 1.1;
+  }
 }
 
 @media (min-width: 768px) and (max-width: 1023px) {
