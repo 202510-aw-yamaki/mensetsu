@@ -162,6 +162,10 @@
     display: none;
   }
 
+  .materials-company-hero .materials-detail-stack > .card:first-child .text br {
+    display: none;
+  }
+
   .materials-detail-visual {
     grid-column: 2;
     grid-row: 2 / span 3;
