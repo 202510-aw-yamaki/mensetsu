@@ -40,6 +40,11 @@
   min-height: 220px;
 }
 
+.support-reflection-hero {
+  display: grid;
+  gap: 12px;
+}
+
 @media (min-width: 1024px) {
   .support-grid {
     grid-template-columns: minmax(0, 1.08fr) minmax(320px, 0.92fr);
@@ -105,6 +110,16 @@
 
   .support-job-understanding-hero .text {
     line-height: 1.1;
+  }
+
+  .support-reflection-hero {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    align-items: start;
+  }
+
+  .support-reflection-intro,
+  .support-reflection-note {
+    grid-column: 1 / -1;
   }
 }
 
