@@ -94,6 +94,10 @@
   padding: 10px;
 }
 
+.materials-curriculum-hero .prompt-box {
+  padding: 8px;
+}
+
 .prompt-label {
   margin: 0 0 8px;
   color: var(--accent-strong);
