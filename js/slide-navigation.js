@@ -1,4 +1,8 @@
 document.addEventListener("keydown", (event) => {
+  if (document.querySelector(".image-modal.is-open")) {
+    return;
+  }
+
   const activeTag = document.activeElement ? document.activeElement.tagName : "";
   const isTypingContext =
     activeTag === "INPUT" ||

@@ -217,6 +217,81 @@ a {
   object-fit: cover;
 }
 
+.image-modal-trigger {
+  padding: 0;
+  width: 100%;
+  border: 0;
+  cursor: zoom-in;
+}
+
+.image-modal-trigger img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.image-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+}
+
+.image-modal[hidden] {
+  display: none;
+}
+
+.image-modal-backdrop {
+  position: absolute;
+  inset: 0;
+  border: 0;
+  background: rgba(22, 31, 28, 0.72);
+  backdrop-filter: blur(8px);
+}
+
+.image-modal-dialog {
+  position: relative;
+  z-index: 1;
+  width: min(1100px, calc(100vw - 32px));
+  max-height: calc(100vh - 32px);
+  margin: 16px auto;
+  padding: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.72);
+  border-radius: 24px;
+  background: rgba(248, 250, 248, 0.96);
+  box-shadow: 0 24px 60px rgba(18, 28, 24, 0.28);
+  opacity: 0;
+  transform: translateY(10px) scale(0.985);
+  transition: opacity 180ms ease, transform 220ms ease;
+}
+
+.image-modal.is-open .image-modal-dialog {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+.image-modal-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 40px;
+  height: 40px;
+  border: 0;
+  border-radius: 999px;
+  background: rgba(31, 45, 40, 0.12);
+  color: var(--accent-strong);
+  font-size: 1.4rem;
+  cursor: pointer;
+}
+
+.image-modal-content {
+  display: block;
+  width: auto;
+  max-width: 100%;
+  max-height: calc(100vh - 96px);
+  margin: 24px auto 0;
+  object-fit: contain;
+}
+
 .list,
 .number-list {
   padding-left: 1.2rem;
@@ -459,6 +534,19 @@ a {
     white-space: normal;
     text-align: right;
     line-height: 1.25;
+  }
+
+  .image-modal-dialog {
+    width: min(100vw - 16px, 900px);
+    max-height: calc(100vh - 16px);
+    margin: 8px auto;
+    padding: 12px;
+    border-radius: 18px;
+  }
+
+  .image-modal-content {
+    max-height: calc(100vh - 72px);
+    margin-top: 20px;
   }
 
 }
