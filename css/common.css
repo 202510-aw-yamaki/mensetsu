@@ -119,9 +119,7 @@ a {
 }
 
 .header-nav-link.is-current {
-  pointer-events: none;
-  background: #dfe9e4;
-  color: rgba(47, 74, 66, 0.78);
+  display: none;
 }
 
 .slide-footer {
