@@ -49,6 +49,10 @@
   align-content: start;
 }
 
+.materials-resume-visual {
+  align-content: end;
+}
+
 .materials-detail-visual .image-frame {
   min-height: 220px;
 }
