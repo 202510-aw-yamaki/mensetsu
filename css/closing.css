@@ -1,0 +1,23 @@
+.closing-scroll {
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding-right: 8px;
+}
+
+.closing-grid {
+  display: grid;
+  gap: 14px;
+}
+
+.closing-intro,
+.closing-checklist-heading,
+.closing-summary {
+  grid-column: 1 / -1;
+}
+
+@media (min-width: 1024px) {
+  .closing-grid {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    align-items: start;
+  }
+}

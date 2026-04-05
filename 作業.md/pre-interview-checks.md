@@ -1,4 +1,4 @@
-# pre-interview-checks.html 作業記録
+﻿# pre-interview-checks.html 作業記録
 
 ## こちらの要望
 
@@ -30,6 +30,7 @@
 - タブレット幅で上段に導入カード、下段に目次と画像の2カラムになるよう調整した
 - SP幅で画像を非表示にした
 - `js/pre-interview-checks-layout.js` を読み込み、PC幅とタブレット幅で画像高さを左側要素に合わせる構成にした
+  → タブレット幅のレイアウトをPC幅と揃えたため、このJSは役割を失った。高さを動的に上書きすると今回の見え方を崩すので削除した
 - `js/page-transition.js` により、ページ全体をやわらかくフェード表示する構成にした
 - タイトル見出しを `page-title` 基準にそろえた
 
@@ -68,6 +69,28 @@
 
 ## 追記: 今回の要望
 
+- `pre-interview-checks/network-check.html` を削除する
+- 章内の順番を `1-1`, `1-2`, `1-3`, `1-4` の順に並べ替える
+- `1-4` 配下の各種プラットフォームページを `1-4_a` 以降にそろえる
+- 目次から各詳細ページへの関連リンクを新しい順番に合わせて更新する
+
+## 追記: 今回の作業内容
+
+- `pre-interview-checks/network-check.html` を削除した
+- `pre-interview-checks.html` の目次を `1-1` から `1-4` の順に並べ替えた
+- `pre-interview-checks/usage-device.html` の次リンクを `audio-camera-desktop.html` に変更した
+- `pre-interview-checks/audio-camera-desktop.html` を `1-2` 扱いに変更した
+- `pre-interview-checks/environment-notifications.html` を `1-3` 扱いに変更し、次リンクを `platform-overview.html` に変更した
+- `pre-interview-checks/platform-overview.html` を `1-4` 扱いに変更した
+- `pre-interview-checks/google-meet.html`, `zoom.html`, `microsoft-teams.html` を `1-4_a` 以降の表記に変更した
+- `microsoft-teams.html` の次リンクを `../interview-day.html` に戻した
+
+## 追記: 今回のインシデントの有無
+
+- なし
+
+## 追記: 今回の要望
+
 - `pre-interview-checks/usage-device.html` の右側画像の下に `キーボードFnキー.png` を追加する
 - `1-1. 使用機材の確認` の見出しをチャプタータイトル基準にする
 - `class="note"` の下に、PC幅のときだけ `webインフラ講師.png` を表示する
@@ -91,3 +114,43 @@
 ## 追記: 今回のインシデントの有無
 
 - なし
+## 追加メモ
+
+- `pre-interview-checks/usage-device.html` のタブレット幅レイアウトを、上段に `1-1. 使用機材の確認` のカードを全幅で配置し、その下に左側 `確認しておきたい項目` と `note`、右側に画像を置く構成へ変更した
+- `pre-interview-checks/audio-camera-desktop.html` のタブレット幅レイアウトも同じ考え方で見直し、上段の導入カードを全幅、その下に左のカード群と右の画像を並べる構成へ揃えた
+- `audio-camera-desktop.html` では、タブレット幅で見出し内の `<br>` と字下げ用の `&emsp;&ensp;&nbsp;&thinsp;` を非表示にして、文言の見え方を整理した
+
+## 追加インシデント
+
+- `css/pre-interview-checks-detail.css` のタブレット用メディアクエリを `usage-device` 側に寄せた際、同じブロック内にあった `audio-camera` 専用ルールを一度消してしまい、`audio-camera-desktop.html` のタブレット幅レイアウトが崩れた
+- 原因は、`usage-device` と `audio-camera` のタブレット用配置を同一メディアクエリで扱うときに、両者の専用ルールを分けて保持できていなかったこと
+
+## 追加対応
+
+- 崩れたあとに `audio-camera-hero` / `audio-camera-stack` / `audio-camera-visual` のタブレット用ルールを同じメディアクエリ内へ戻し、`usage-device` の新配置を維持したまま復旧した
+- `usage-device` 側と `audio-camera` 側のタブレット用ルールを同じファイル内で管理しつつ、セレクタを分けて衝突しないようにした
+
+## 追加注意点
+
+- `usage-device` と `audio-camera` のように似た構成でも、まず共通化できる部分はまとめる。ページ固有で必要な差分だけを分けて書く
+- 1つのメディアクエリをまとめて編集する前に、他ページの専用ルールを消していないか確認する。共通化できる箇所は重複させない
+- レイアウト変更後は、関連する別ページのタブレット幅も必ず目視確認する
+## 追加対応2
+
+- `usage-device` と `audio-camera-desktop` のタブレット幅レイアウトを、共通の2カラム骨格へ寄せた
+- `usage-device` と `audio-camera` に共通する `display: contents`、先頭カードの全幅配置、右カラムの配置指定をまとめた
+- 行数や見出しの表示切り替えなど、レイアウトが崩れる差分だけはページ固有ルールとして残した
+## 追加メモ3
+- usage-device.html のタブレット幅では、右側画像2枚の間隔を JS で調整し、最大 30px までに制御する
+- 余り高さが 30px を超えた場合は、上の画像の上側へ margin-top として逃がす
+- PC/SP には影響させず、ページ固有の調整として分離する
+## 追加メモ4
+
+- [usage-device.md](usage-device.md) を新規作成し、`usage-device.html` の作業記録を分離した
+  → `usage-device` の詳細調整が `pre-interview-checks.md` に埋もれると進行が追いづらくなるため、専用メモへ切り出した
+
+## 追加メモ5
+
+- `slide-body` を PC幅で 750px 固定にしたあと、`usage-device.html` と `audio-camera-desktop.html` は内部の高さ配分も直さないと footer 裏に沈み込んだ
+- 原因は、外枠だけでなく各ページの `stack` / `visual` が内容量基準のままだったこと
+- PC幅では各ページの左右カラムを `height: 100%` 前提にそろえ、画像は枠内に収まるよう `contain` で扱う方針にした

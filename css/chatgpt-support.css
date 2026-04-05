@@ -1,4 +1,199 @@
-.example-grid {
+.support-grid {
+  display: grid;
+  gap: 18px;
+}
+
+.support-intro {
+  grid-area: intro;
   display: grid;
   gap: 14px;
+}
+
+.support-toc {
+  grid-area: toc;
+  align-self: start;
+}
+
+.support-visual {
+  grid-area: visual;
+  min-height: 0;
+  align-self: stretch;
+}
+
+.support-detail-hero {
+  align-items: start;
+  min-height: 0;
+}
+
+.support-detail-stack {
+  display: grid;
+  gap: 12px;
+}
+
+.support-detail-visual {
+  display: grid;
+  gap: 14px;
+  align-content: end;
+}
+
+.support-detail-visual .image-frame {
+  min-height: 220px;
+}
+
+.support-reflection-hero {
+  display: grid;
+  gap: 12px;
+}
+
+@media (min-width: 1024px) {
+  .support-grid {
+    grid-template-columns: minmax(0, 1.08fr) minmax(320px, 0.92fr);
+    grid-template-areas:
+      "intro visual"
+      "toc visual";
+    align-items: stretch;
+    height: 100%;
+    min-height: 0;
+  }
+
+  .support-visual {
+    display: grid;
+    grid-template-rows: 1fr;
+    height: 100%;
+  }
+
+  .support-visual .image-frame {
+    height: 100%;
+    min-height: 0;
+  }
+
+  .support-visual img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+  }
+
+  .support-detail-hero {
+    align-items: stretch;
+    height: 100%;
+    min-height: 0;
+  }
+
+  .support-detail-stack {
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+  }
+
+  .support-detail-visual {
+    align-self: stretch;
+    height: 100%;
+    min-height: 0;
+  }
+
+  .support-detail-visual > .image-frame {
+    height: 100%;
+    min-height: 0;
+  }
+
+  .support-detail-visual img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+  }
+
+  .support-job-understanding-hero .support-detail-stack {
+    display: grid;
+  }
+
+  .support-job-understanding-hero .text {
+    line-height: 1.1;
+  }
+
+  .support-reflection-hero {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    align-items: start;
+  }
+
+  .support-reflection-intro,
+  .support-reflection-note {
+    grid-column: 1 / -1;
+  }
+
+  .support-mock-interview-hero .support-detail-visual {
+    align-self: end;
+    height: auto;
+    justify-items: center;
+  }
+
+  .support-mock-interview-hero .support-detail-visual > .image-frame {
+    height: auto;
+    width: 100%;
+    display: grid;
+    place-items: center;
+  }
+
+  .support-mock-interview-hero .support-detail-visual img {
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    max-height: 702px;
+    object-fit: contain;
+    object-position: center;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .support-grid {
+    grid-template-columns: minmax(0, 1.08fr) minmax(320px, 0.92fr);
+    grid-template-areas:
+      "intro visual"
+      "toc visual";
+    align-items: stretch;
+    height: 100%;
+    min-height: 0;
+  }
+
+  .support-visual {
+    display: grid;
+    grid-template-rows: 1fr;
+    height: 100%;
+  }
+
+  .support-visual .image-frame {
+    height: 100%;
+  }
+
+  .support-visual img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1100px) {
+  .page-lead,
+  .text,
+  .list,
+  .number-list,
+  .caption {
+    line-height: 1.3;
+  }
+}
+
+@media (max-width: 767px) {
+  .support-grid {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "intro"
+      "toc";
+  }
+
+  .support-visual,
+  .support-detail-visual {
+    display: none;
+  }
 }

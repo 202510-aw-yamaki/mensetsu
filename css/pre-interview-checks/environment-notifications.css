@@ -1,0 +1,7 @@
+.environment-notifications-stack {
+  min-height: 0;
+}
+
+.environment-notifications-stack > .note {
+  min-height: 0;
+}

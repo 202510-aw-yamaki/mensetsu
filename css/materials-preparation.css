@@ -1,8 +1,105 @@
+.materials-grid {
+  display: grid;
+  gap: 18px;
+}
+
+.materials-intro {
+  grid-area: intro;
+  display: grid;
+  gap: 14px;
+}
+
+.materials-toc {
+  grid-area: toc;
+  align-self: start;
+}
+
+.materials-visual {
+  grid-area: visual;
+  min-height: 0;
+  align-self: stretch;
+}
+
+.toc-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.toc-note {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.materials-detail-hero {
+  align-items: start;
+  min-height: 0;
+}
+
+.materials-detail-stack {
+  display: grid;
+  gap: 12px;
+}
+
+.materials-detail-visual {
+  display: grid;
+  gap: 14px;
+  align-content: start;
+}
+
+.materials-resume-visual {
+  align-content: end;
+}
+
+.materials-portfolio-visual {
+  align-content: end;
+}
+
+.materials-curriculum-hero {
+  align-items: start;
+}
+
+.materials-curriculum-column {
+  display: grid;
+  gap: 12px;
+}
+
+.materials-curriculum-benefits {
+  grid-column: 1 / -1;
+}
+
+.materials-curriculum-intro {
+  grid-column: 1 / -1;
+}
+
+.materials-questionnaire-hero .list {
+  line-height: 0.8;
+}
+
+.materials-detail-visual .image-frame {
+  min-height: 220px;
+}
+
+.materials-sp-visual {
+  display: none;
+  margin: 0;
+}
+
 .prompt-box {
   padding: 16px;
   border-radius: 16px;
   background: #edf3ef;
   border: 1px solid var(--line);
+}
+
+.materials-company-hero .prompt-box {
+  padding: 10px;
+}
+
+.materials-curriculum-hero .prompt-box {
+  padding: 8px;
 }
 
 .prompt-label {
@@ -15,4 +112,197 @@
   margin: 0;
   color: var(--muted);
   line-height: 1.8;
+}
+
+@media (min-width: 1024px) {
+  .materials-grid {
+    grid-template-columns: minmax(0, 1.08fr) minmax(320px, 0.92fr);
+    grid-template-areas:
+      "intro visual"
+      "toc visual";
+    align-items: stretch;
+    height: 100%;
+    min-height: 0;
+  }
+
+  .materials-visual {
+    display: grid;
+    grid-template-rows: 1fr;
+    height: 100%;
+  }
+
+  .materials-visual .image-frame {
+    height: 100%;
+    min-height: 0;
+  }
+
+  .materials-visual img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+  }
+
+  .materials-detail-hero {
+    grid-template-columns: minmax(0, 1.08fr) minmax(300px, 0.92fr);
+    align-items: stretch;
+    height: 100%;
+    min-height: 0;
+  }
+
+  .materials-detail-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    min-height: 0;
+  }
+
+  .materials-detail-stack > .card,
+  .materials-detail-stack > .note,
+  .materials-detail-stack > .materials-sp-visual {
+    flex: 0 0 auto;
+  }
+
+  .materials-detail-visual {
+    align-self: stretch;
+    height: 100%;
+    min-height: 0;
+  }
+
+  .materials-detail-visual > .image-frame {
+    min-height: 0;
+  }
+
+  .materials-company-hero .materials-detail-visual {
+    grid-template-rows: repeat(2, minmax(0, 1fr));
+  }
+
+  .materials-company-hero .materials-detail-visual img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+    background: #fff;
+  }
+
+  .materials-curriculum-hero {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    align-items: start;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .materials-grid {
+    grid-template-columns: minmax(0, 1.08fr) minmax(320px, 0.92fr);
+    grid-template-areas:
+      "intro visual"
+      "toc visual";
+    align-items: stretch;
+    height: 100%;
+    min-height: 0;
+  }
+
+  .materials-visual {
+    display: grid;
+    grid-template-rows: 1fr;
+    height: 100%;
+  }
+
+  .materials-visual .image-frame {
+    height: 100%;
+  }
+
+  .materials-visual img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+  }
+
+  .materials-detail-hero {
+    grid-template-columns: minmax(0, 1.08fr) minmax(320px, 0.92fr);
+    grid-template-rows: auto auto auto auto;
+    gap: 14px 16px;
+    align-items: stretch;
+    height: 100%;
+    min-height: 0;
+  }
+
+  .materials-detail-stack {
+    display: contents;
+  }
+
+  .materials-detail-stack > .card:first-child {
+    grid-column: 1 / -1;
+  }
+
+  .materials-detail-stack > .card:nth-child(n + 2),
+  .materials-detail-stack > .note {
+    grid-column: 1;
+  }
+
+  .materials-detail-stack .section-title br,
+  .materials-detail-stack .section-title .title-indent {
+    display: none;
+  }
+
+  .materials-company-hero .materials-detail-stack > .card:first-child .text br {
+    display: none;
+  }
+
+  .materials-resume-hero .materials-detail-stack > .card:first-child .text br {
+    display: none;
+  }
+
+  .materials-portfolio-hero .materials-detail-stack > .card:first-child .text br,
+  .materials-portfolio-hero .materials-detail-stack > .card:nth-child(2) .text br,
+  .materials-portfolio-hero .materials-detail-stack > .note .text br {
+    display: none;
+  }
+
+  .materials-detail-visual {
+    grid-column: 2;
+    grid-row: 2 / span 3;
+    height: auto;
+    align-self: end;
+  }
+
+  .materials-resume-visual > .image-frame:last-of-type {
+    display: grid;
+    place-items: center;
+    background: #8DB3D9;
+  }
+
+  .materials-resume-visual > .image-frame:last-of-type img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+  }
+
+  .materials-curriculum-hero {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    align-items: start;
+  }
+}
+
+@media (max-width: 767px) {
+  .materials-grid {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "intro"
+      "toc";
+  }
+
+  .materials-visual {
+    display: none;
+  }
+
+  .materials-detail-visual {
+    display: none;
+  }
+
+  .materials-sp-visual {
+    display: grid;
+    gap: 12px;
+  }
 }

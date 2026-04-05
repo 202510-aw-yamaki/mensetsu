@@ -3,42 +3,56 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>1-3. プラットフォームに慣れておく</title>
+  <title>1-4. 面接で使用されやすいプラットフォームに慣れておく</title>
   <script>document.documentElement.classList.add('js-page-transition');</script>
   <link rel="stylesheet" href="../css/common.css">
-  <link rel="stylesheet" href="../css/pre-interview-checks-detail.css">
+  <link rel="stylesheet" href="../css/pre-interview-checks.css">
+  <link rel="stylesheet" href="../css/pre-interview-checks/platform-overview.css">
 </head>
 <body>
   <div class="site-shell">
     <div class="slide-page">
       <header class="slide-header">
         <div class="slide-header-bar">
-          <span class="eyebrow">1-3 Platform Overview</span>
+          <span class="eyebrow">1-4 Platform Overview</span>
+          <nav class="header-nav" aria-label="共通ナビゲーション">
+            <a class="header-nav-link" href="../index.html">Indexへ</a>
+            <a class="header-nav-link" href="../pre-interview-checks.html">Sec.Topへ</a>
+          </nav>
           <div class="pager-main">
             <div class="pager-links">
-              <a class="pager-link is-secondary" href="network-check.html">前へ</a>
-              <div class="page-number">1-3</div>
+              <a class="pager-link is-secondary" href="environment-notifications.html">前へ</a>
+              <div class="page-number">1-4</div>
               <a class="pager-link" href="google-meet.html">次へ</a>
             </div>
           </div>
         </div>
       </header>
       <main class="slide-body stack">
-        <section class="content-grid detail-hero" aria-labelledby="detail-title">
-          <div class="stack">
+        <section class="content-grid detail-hero platform-overview-hero" aria-labelledby="detail-title">
+          <div class="stack platform-overview-stack">
             <article class="card">
-              <h1 id="detail-title" class="section-title">1-3. プラットフォームに慣れておく</h1>
-              <p class="text">Web面接では、主に Google Meet、Zoom、Microsoft Teams が使われます。事前に一度触れておくことで、当日の操作ミスや焦りを減らせます。</p>
+              <h1 id="detail-title" class="section-title">1-4. 面接で使用されやすい<br>
+                <span class="title-indent">&emsp;&ensp;&nbsp;&thinsp;</span>プラットフォームに慣れておく</h1>
             </article>
             <article class="card">
               <h2 class="block-title">主な対象ツール</h2>
-              <ul class="list-inline" aria-label="対象ツール">
-                <li>Google Meet</li>
-                <li>Zoom</li>
-                <li>Microsoft Teams</li>
-              </ul>
+              <div class="platform-tool-list" aria-label="主な対象ツール">
+                <a class="platform-tool-link" href="google-meet.html">
+                  <span class="platform-tool-name">Google Meet</span>
+                  <span class="platform-tool-text">アプリのインストールが不要でブラウザから1クリックで参加できるため、PCでの接続トラブルが最も起きにくい。</span>
+                </a>
+                <a class="platform-tool-link" href="zoom.html">
+                  <span class="platform-tool-name">Zoom</span>
+                  <span class="platform-tool-text">自分の映りを確認・調整できる「外見補正」や「低照度調整」が優秀で、表情を明るく健康的に見せやすい。</span>
+                </a>
+                <a class="platform-tool-link" href="microsoft-teams.html">
+                  <span class="platform-tool-name">Microsoft Teams</span>
+                  <span class="platform-tool-text">事前に共有された資料（PDFやPPT）を会議画面内で自分のペースで読み返せる機能があり、企業側の情報把握がしやすい。</span>
+                </a>
+              </div>
             </article>
-            <article class="card">
+            <article class="note">
               <h2 class="block-title">共通して確認したいこと</h2>
               <ul class="list">
                 <li>表示名が本名になっているか確認する</li>
@@ -48,10 +62,9 @@
               </ul>
             </article>
           </div>
-          <aside class="image-panel detail-visual" aria-label="プラットフォームイメージ">
-            <h2 class="block-title">プラットフォームイメージ</h2>
+          <aside class="image-panel detail-visual platform-overview-visual" aria-label="プラットフォームのイメージ">
             <div class="image-frame">
-              <img src="../image/googlemeets基本操作画面.png" alt="Google Meet の基本操作画面">
+              <img src="../image/Web面接を受ける女性.png" alt="Web面接を受ける女性">
             </div>
           </aside>
         </section>
@@ -60,22 +73,24 @@
         <div class="pager">
           <div class="pager-main">
             <div class="pager-links">
-              <a class="pager-link is-secondary" href="network-check.html">前へ</a>
-              <div class="page-number">1-3</div>
+              <a class="pager-link is-secondary" href="environment-notifications.html">前へ</a>
+              <div class="page-number">1-4</div>
               <a class="pager-link" href="google-meet.html">次へ</a>
             </div>
           </div>
           <div class="pager-side">
             <div class="pager-progress" aria-hidden="true">
-              <div class="pager-progress-bar" style="width: 50%;"></div>
+              <div class="pager-progress-bar" style="width: 57.14%;"></div>
             </div>
-            <div class="pager-hint">← → キーでも操作できます</div>
+            <div class="pager-hint">左右キーやフリック操作も可能です</div>
           </div>
         </div>
       </footer>
     </div>
   </div>
   <script src="../js/page-transition.js"></script>
+  <script src="../js/image-modal.js"></script>
   <script src="../js/slide-navigation.js"></script>
+  <script src="../js/platform-overview-layout.js"></script>
 </body>
 </html>
