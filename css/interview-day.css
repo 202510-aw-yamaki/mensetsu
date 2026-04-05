@@ -1,8 +1,23 @@
-.response-example {
-  padding: 14px 16px;
-  border-radius: 14px;
-  background: #edf3ef;
-  border: 1px solid var(--line);
-  color: var(--accent-strong);
-  font-weight: 700;
+.interview-day-scroll {
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding-right: 8px;
+}
+
+.interview-day-grid {
+  display: grid;
+  gap: 14px;
+}
+
+.interview-day-intro,
+.interview-day-checklist-heading,
+.interview-day-summary {
+  grid-column: 1 / -1;
+}
+
+@media (min-width: 1024px) {
+  .interview-day-grid {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    align-items: start;
+  }
 }

@@ -125,10 +125,14 @@
   .support-mock-interview-hero .support-detail-visual {
     align-self: end;
     height: auto;
+    justify-items: center;
   }
 
   .support-mock-interview-hero .support-detail-visual > .image-frame {
     height: auto;
+    width: 100%;
+    display: grid;
+    place-items: center;
   }
 
   .support-mock-interview-hero .support-detail-visual img {
@@ -167,6 +171,16 @@
     height: 100%;
     object-fit: cover;
     object-position: center top;
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1100px) {
+  .page-lead,
+  .text,
+  .list,
+  .number-list,
+  .caption {
+    line-height: 1.3;
   }
 }
 
