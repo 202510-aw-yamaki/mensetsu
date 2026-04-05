@@ -33,7 +33,7 @@
 .support-detail-visual {
   display: grid;
   gap: 14px;
-  align-content: start;
+  align-content: end;
 }
 
 .support-detail-visual .image-frame {
@@ -63,6 +63,36 @@
   }
 
   .support-visual img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+  }
+
+  .support-detail-hero {
+    align-items: stretch;
+    height: 100%;
+    min-height: 0;
+  }
+
+  .support-detail-stack {
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+  }
+
+  .support-detail-visual {
+    align-self: stretch;
+    height: 100%;
+    min-height: 0;
+  }
+
+  .support-detail-visual > .image-frame {
+    height: 100%;
+    min-height: 0;
+  }
+
+  .support-detail-visual img {
     width: 100%;
     height: 100%;
     object-fit: cover;
