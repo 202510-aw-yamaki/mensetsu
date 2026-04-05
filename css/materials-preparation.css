@@ -1,3 +1,58 @@
+.materials-grid {
+  display: grid;
+  gap: 18px;
+}
+
+.materials-intro {
+  grid-area: intro;
+  display: grid;
+  gap: 14px;
+}
+
+.materials-toc {
+  grid-area: toc;
+  align-self: start;
+}
+
+.materials-visual {
+  grid-area: visual;
+  min-height: 0;
+  align-self: stretch;
+}
+
+.toc-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.toc-note {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.materials-detail-hero {
+  align-items: start;
+  min-height: 0;
+}
+
+.materials-detail-stack {
+  display: grid;
+  gap: 12px;
+}
+
+.materials-detail-visual {
+  display: grid;
+  gap: 14px;
+  align-content: start;
+}
+
+.materials-detail-visual .image-frame {
+  min-height: 220px;
+}
+
 .prompt-box {
   padding: 16px;
   border-radius: 16px;
@@ -15,4 +70,80 @@
   margin: 0;
   color: var(--muted);
   line-height: 1.8;
+}
+
+@media (min-width: 1024px) {
+  .materials-grid {
+    grid-template-columns: minmax(0, 1.08fr) minmax(320px, 0.92fr);
+    grid-template-areas:
+      "intro visual"
+      "toc visual";
+    align-items: stretch;
+    height: 100%;
+    min-height: 0;
+  }
+
+  .materials-visual {
+    display: grid;
+    grid-template-rows: 1fr;
+    height: 100%;
+  }
+
+  .materials-visual .image-frame {
+    height: 100%;
+    min-height: 0;
+  }
+
+  .materials-visual img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .materials-grid {
+    grid-template-columns: minmax(0, 1.08fr) minmax(320px, 0.92fr);
+    grid-template-areas:
+      "intro visual"
+      "toc visual";
+    align-items: stretch;
+    height: 100%;
+    min-height: 0;
+  }
+
+  .materials-visual {
+    display: grid;
+    grid-template-rows: 1fr;
+    height: 100%;
+  }
+
+  .materials-visual .image-frame {
+    height: 100%;
+  }
+
+  .materials-visual img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+  }
+}
+
+@media (max-width: 767px) {
+  .materials-grid {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "intro"
+      "toc";
+  }
+
+  .materials-visual {
+    display: none;
+  }
+
+  .materials-detail-visual {
+    display: none;
+  }
 }
