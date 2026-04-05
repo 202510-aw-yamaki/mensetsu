@@ -74,6 +74,10 @@
   grid-column: 1 / -1;
 }
 
+.materials-questionnaire-hero .list {
+  line-height: 1.2;
+}
+
 .materials-detail-visual .image-frame {
   min-height: 220px;
 }

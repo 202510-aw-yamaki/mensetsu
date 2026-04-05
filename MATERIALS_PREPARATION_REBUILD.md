@@ -41,6 +41,7 @@
 - `2-2. 自身の履歴書・職務経歴書`
 - `2-3. 自身のポートフォリオ`
 - `2-4. 職業訓練校のカリキュラムおよび学習記録`
+- `2-5. 企業アンケートも有効活用`
 
 ## 第2章配下ページ構成
 
@@ -48,6 +49,7 @@
 - `materials-preparation/resume-career-history.html`
 - `materials-preparation/portfolio.html`
 - `materials-preparation/curriculum-learning-log.html`
+- `materials-preparation/company-questionnaire.html`
 
 ## 実装方針
 
