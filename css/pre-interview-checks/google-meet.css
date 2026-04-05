@@ -1,0 +1,77 @@
+@media (min-width: 768px) and (max-width: 1023px) {
+  .google-meet-hero {
+    grid-template-columns: minmax(0, 1.08fr) minmax(320px, 0.92fr);
+    grid-template-rows: auto auto auto;
+    gap: 14px 16px;
+    align-items: stretch;
+    height: 100%;
+    min-height: 0;
+  }
+
+  .google-meet-stack {
+    display: contents;
+  }
+
+  .google-meet-stack > .card:first-child {
+    grid-column: 1 / -1;
+  }
+
+  .google-meet-stack > .card:nth-child(n + 2),
+  .google-meet-stack > .note {
+    grid-column: 1;
+  }
+
+  .google-meet-stack > .card:nth-child(2) {
+    display: none;
+  }
+
+  .google-meet-stack > .card:nth-child(3) {
+    grid-column: 1;
+    grid-row: 2;
+  }
+
+  .google-meet-stack > .note {
+    grid-column: 1;
+    grid-row: 3;
+  }
+
+  .google-meet-stack .section-title br,
+  .google-meet-stack .section-title .title-indent {
+    display: none;
+  }
+
+  .google-meet-stack > .card:first-child .text br {
+    display: none;
+  }
+
+  .google-meet-hero .detail-visual {
+    grid-column: 2;
+    grid-row: 2 / span 2;
+    height: 100%;
+    min-height: 0;
+    align-self: stretch;
+    grid-template-rows: minmax(0, 1fr) auto;
+  }
+
+  .google-meet-hero .detail-visual > .image-frame:first-of-type {
+    min-height: 0;
+    height: 100%;
+  }
+
+  .google-meet-hero .detail-visual > .image-frame:first-of-type img {
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+  }
+
+  .google-meet-hero .detail-visual > .image-frame:last-of-type img {
+    height: auto;
+    object-fit: contain;
+  }
+
+  .google-meet-hero .detail-visual > .image-frame:last-of-type {
+    display: grid;
+    place-items: center;
+    background: #fff;
+  }
+}
