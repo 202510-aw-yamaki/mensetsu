@@ -57,6 +57,23 @@
   align-content: end;
 }
 
+.materials-curriculum-hero {
+  align-items: start;
+}
+
+.materials-curriculum-column {
+  display: grid;
+  gap: 12px;
+}
+
+.materials-curriculum-benefits {
+  grid-column: 1 / -1;
+}
+
+.materials-curriculum-intro {
+  grid-column: 1 / -1;
+}
+
 .materials-detail-visual .image-frame {
   min-height: 220px;
 }
@@ -159,6 +176,11 @@
     object-position: center;
     background: #fff;
   }
+
+  .materials-curriculum-hero {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    align-items: start;
+  }
 }
 
 @media (min-width: 768px) and (max-width: 1023px) {
@@ -247,6 +269,11 @@
     width: 100%;
     height: auto;
     object-fit: contain;
+  }
+
+  .materials-curriculum-hero {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    align-items: start;
   }
 }
 
