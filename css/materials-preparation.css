@@ -53,6 +53,10 @@
   align-content: end;
 }
 
+.materials-portfolio-visual {
+  align-content: end;
+}
+
 .materials-detail-visual .image-frame {
   min-height: 220px;
 }
@@ -217,6 +221,12 @@
   }
 
   .materials-resume-hero .materials-detail-stack > .card:first-child .text br {
+    display: none;
+  }
+
+  .materials-portfolio-hero .materials-detail-stack > .card:first-child .text br,
+  .materials-portfolio-hero .materials-detail-stack > .card:nth-child(2) .text br,
+  .materials-portfolio-hero .materials-detail-stack > .note .text br {
     display: none;
   }
 
