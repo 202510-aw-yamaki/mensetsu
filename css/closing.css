@@ -1,22 +1,22 @@
-.interview-day-scroll {
+.closing-scroll {
   overflow-y: auto;
   overflow-x: hidden;
   padding-right: 8px;
 }
 
-.interview-day-grid {
+.closing-grid {
   display: grid;
   gap: 14px;
 }
 
-.interview-day-intro,
-.interview-day-checklist-heading,
-.interview-day-summary {
+.closing-intro,
+.closing-checklist-heading,
+.closing-summary {
   grid-column: 1 / -1;
 }
 
 @media (min-width: 1024px) {
-  .interview-day-grid {
+  .closing-grid {
     grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
     align-items: start;
   }

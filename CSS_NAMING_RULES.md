@@ -26,9 +26,7 @@
 - `pre-interview-checks.html` -> `css/pre-interview-checks.css`
 - `materials-preparation.html` -> `css/materials-preparation.css`
 - `chatgpt-support.html` -> `css/chatgpt-support.css`
-- `interview-day.html` -> `css/interview-day.css`
-- `final-checklist.html` -> `css/final-checklist.css`
-- `summary-conclusion.html` -> `css/summary-conclusion.css`
+- `closing.html` -> `css/closing.css`
 
 ### 章配下ページ
 
